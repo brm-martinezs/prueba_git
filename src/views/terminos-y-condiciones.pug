@@ -1,0 +1,23 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	title HOTELES ESTELAR - A rodar por Colombia
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="A rodar por Colombia" )
+
+
+block content
+	//- Seccion de inicio
+	section.terminos
+		div.container
+			div.row
+				h1 TÉRMINOS Y CONDICIONES
+				h2 El pasaje estándar Lorem Ipsum, usado desde el año 1500.
+				p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+block Scripts
+	//-Acá se ponen js que solo vayan en ésta página

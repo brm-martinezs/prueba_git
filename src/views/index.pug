@@ -1,0 +1,155 @@
+//-Layout Base
+extends ../templates/base.pug
+
+//-Etiqueta Title
+block title
+	title HOTELES ESTELAR - A rodar por Colombia
+
+//-Etiqueta Metadescription
+block description
+	meta(name="description", content="A rodar por Colombia" )
+
+
+block content
+	//- Seccion de inicio
+	.logo-estatico.inicial.animated.bounceIn
+		include ../templates/includes/a-rodar-por-toda-colombia-01.svg
+	section.vp.validar-placa
+		div.container.content-descripcion-actividad
+			div.row
+				article.articulo-descripcion-actividad
+					h2.titulo-descripcion-actividad.animated.bounceIn HOTELES ESTELAR <br/>
+						span Y BMW MOTORRAD 
+					p.parrafo-descripcion-actividad.animated.bounceIn  Aprovecha un 20% de descuento <br/> en nuestros hoteles
+				div.logo-a-rodar-por-colombia.inicio
+					include ../templates/includes/a-rodar-por-toda-colombia-01.svg
+				button.btn-nav.continuar-actividad.external.animated.pulse.infinite(data-link="validar-placa" type="button") CONTINUAR
+	//- seccion de validacion de placas
+	section#validar-placa.vp.llenar-formulario.seccion-oculta
+		div.container.content-validar-placa
+			div.row
+				p.texto-validar-placa Para acceder al beneficio, Ingresa el número de la placa de tu motocicleta.
+				//- formulario de placa
+				form#form-validar-placa.form.form-validar-placa
+					div.form.alertas-placas
+						p
+							span.mensaje-alerta
+					div.form.form-placa
+						label(for='placa', class="titulo-placa") PLACA
+						input(id="placa", class="campo-validar-placa" name="placa", type="text" minlength="5", maxlength="6", placeholder="aaa23a")
+						button.boton-validar-placa.animated.pulse.infinite(type="button", data-link="llenar-formulario") CONTINUAR
+				//-  cierra formulario de placa
+		+image("puerta-izq.png", 'puerta-bmw')(class="bgimg puerta-metalica-izq")
+		+image("puerta-dere.png", 'puerta-bmw')(class="bgimg puerta-metalica-dere")
+		+image("moto.png", 'moto-bmw')(class="bgimg moto-bmw")
+		+image("piso.png", 'piso-bmw')(class="bgimg piso")
+	//- seccion de actualizar datos
+	section#llenar-formulario.formulario.elegir-hotel.seccion-oculta
+		div.container-fluid.content-actualizar-datos
+			div.row
+				//- formulario de datos
+				form#form-actualizar-datos.form.from-actualizar-datos(name="from-actualizar-datos")
+					div.row
+						div.columna-form1
+							div.form.alertas-actualizar
+								p
+									span.mensaje-alerta
+							div.form.form-nombre
+								label(for="nombre") NOMBRE DEL PROPIETARIO:
+								input(id="nombre", name="nombre", type="text", placeholder="CAMILO VIRACACHA")
+							div.form.form-cedula
+								label(for="cedula") CÉDULA:
+								input(id="cedula", name="cedula", type="number", placeholder="10236565")
+							div.form.form-email
+								label(for="email") EMAIL:
+								input(id="email", name="email", type="email", placeholder="usuario@correo.com")
+							div.form.form-linea
+								label(for="linea") LÍNEA MOTOCICLETA:
+								select
+									option Opción 1
+							div.form.form-modelo
+								label(for="modelo") MODELO:
+								select
+									option Opción 2
+							div.form.form-cuidad
+								label(for="departamento") DEPARTAMENTO
+								select(id="departamento", name="departament")
+									option DEPARTAMENTO
+							div.form.form-cuidad
+								label(for="ciudad") Ciudad
+								select(id="ciudad", name="ciudad")
+									option CIUDAD
+						div.columna-form2
+							.logo-a-rodar-por-colombia.form
+								include ../templates/includes/a-rodar-por-toda-colombia-01.svg
+							div.form.form-autorizacion
+								input(type="checkbox", id="autorizacion", name="autorizacion")
+								label(for="autorizacion") Autorizo voluntariamente a <span>hoteles estelar</span> para tratar mis datos personales de acuerdo con lo dispuesto en la Ley 1581 de 2012, el Decreto Único 1074 de 2015 y la política de tratamiento de datos personales de Pernod Ricard Colombia. La Información será utilizada para contactarme e informarme sobre actividades de publicidad, mercadeo, comerciales, fidelización, encuestas y eventos.
+							div.form.form-aceptar
+								input(type="checkbox", id="aceptar", name="aceptar")
+								label(for="aceptar") Conozco y <a class="ancla-terminos" href="terminos-y-condiciones.html" target="_blank">acepto términos y condiciones</a> de <span>A rodar con hoteles y bmw</span>
+							div.form.form-declaro
+								input(type="checkbox", id="declaro", name="declaro")
+								label(for="declaro") Declaro que he leído y acepto <span><a class="ancla-terminos" href="politica-de-datos.html" target="_blank">la política de tratamiento de datos personales</a></span> de <span>hoteles estelar</span> y he sido informado de los derechos a conocer, actualizar, rectificar y suprimir datos personales, así como revocar la autorización a través del correo electrónico.
+					div.row
+						button.boton-actualizar-datos.animated.pulse.infinite(type="button", data-link="elegir-hotel") Actualizar Datos
+					//- cierra formulario de de datos
+				div.informacion-manzanillo
+		div.mascara-img-manzanillo
+			+image("manzanillo.png", 'manzanillo')(class="bgimg manzanillo")
+	//- seccion de  seleccionar destino
+	section#elegir-hotel.vp.destino.seccion-oculta
+		div.container.content-elegir-destino
+			div.row
+				div.content-destino
+					label(for="destino" class="titulo-destino") SELECCIONE DESTINO
+					select
+						option(value="1") BARRANQUILLA
+						option(value="2")  BOGOTÁ
+						option(value="3")  BUCARAMANGA
+						option(value="4")  CALI
+						option(value="5")  CARTAGENA
+						option(value="5")  IBAGUÉ
+						option(value="6")  MANIZALES
+						option(value="7")  MEDELLÍN
+						option(value="8")  PAIPA
+						option(value="9") SANTAMARTA
+						option(value="10")  VILLAVICENCIO
+						option(value="11")  YOPAL
+					
+					div.items-destinos
+						//- div.row-destino
+						//- Cilco each para llamar los hoteles ,  imagnenes y vinculos
+						-list = ['Hotel ESTELAR Windsor house', 'Hotel ESTELAR suites jones', 'Hotel ESTELAR parque de la 93', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100']
+						-img = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+						-link = ['#', '#', '#', '#']
+						each item, contador in list
+							div.item-destino.bounceInUp
+								div.item-imagen
+									a.selecionar-hotel.btn-reservar(href="#", target="_blank") RESERVAR
+									//- div.overlay-reserva
+									img.tumb-hotel(src='images/hotel-estelar.png' alt="aa" title="aa")
+								h4.titulo-item: a.selecionar-hotel(href="#", target="_blank") #{item}
+						div.botones
+						
+						//- div.row-destino
+						//- 	//- Cilco each para llamar los hoteles ,  imagnenes y vinculos
+						//- 	-list = ['Hotel ESTELAR Windsor house', 'Hotel ESTELAR suites jones', 'Hotel ESTELAR parque de la 93', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100', 'Hotel ESTELAR calle 100']
+						//- 	-img = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+						//- 	-link = ['#', '#', '#', '#']
+						//- 	each item, contador in list
+						//- 		div.item-destino
+						//- 			div.item-imagen
+						//- 				button.btn-reservar.active RESERVAR
+						//- 				div.overlay-reserva
+						//- 				img(src="images/aaa.png")
+						//- 			h4.titulo-item #{item}
+						//- 		//- span #{img[contador]}
+					h2.copy-footer MAKE LIFE A RIDE
+					//-Modulo de reservas
+				div.modulo-reservas
+		+image("moto-footer.png", 'moto-pie')(class="bgimg moto-pie")
+		+image("piso-footer.png", 'piso-pie')(class="bgimg piso-pie")
+
+block Scripts
+	//- Acá se ponen js que solo vayan en ésta página

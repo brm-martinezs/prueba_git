@@ -1,0 +1,49 @@
+/*
+
+En este archivo se declaran los colores, las fonts y sus variaciones
+
+las variables se deben declarar con $ al inicio del nombre de la variable
+
+*/
+
+//Paleta de colores del proyecto
+
+$Amarillo       = #ffc200
+$AmarilloOscuro = darken($Amarillo, 30%) 
+$Azul           = #3973bf
+$AzulClaro      = lighten($Azul, 30%)
+$Gris           = #434343
+$Naranja        = #f79529
+$Rojo           = #e10d37
+$Verde          = #1fa042
+
+
+/*Pueden encontrar más funciones para mezclas y manejo de color acá:
+https://learnboost.github.io/stylus/docs/bifs.html*/
+@font-face
+	font-family 'bebas_neuebold'
+	src url('../fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+	url('../fonts/bebasneue_bold-webfont.woff') format('woff')
+	font-weight normal
+	font-style normal
+
+@font-face
+	font-family 'bebas_neue_regularregular'
+	src url('../fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+		 url('../fonts/bebasneue_regular-webfont.woff') format('woff')
+	font-weight normal
+	font-style normal
+
+//Fonts
+// $Roboto = 'Roboto', sans-serif
+// $Varela = 'Varela Round', sans-serif
+$bebas	= 'bebas_neuebold'
+//Font weights
+$Light  = 300
+$Normal = 400
+$Bold   = 700
+
+
+//Site grid spacing and width
+$Gutter            = 0.5rem
+$SiteWidth         = 110rem
