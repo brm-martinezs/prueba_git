@@ -28,6 +28,8 @@ class DataObjects_Linea extends DB_DataObject {
         );
     }
     
+    //Comentario para probar esto
+
     // now define the keys.
     function keys() {
         return array('id');
