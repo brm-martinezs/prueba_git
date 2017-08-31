@@ -85,25 +85,5 @@ class Lineas
 	}
 
 	
-/*
-	function getIngrediente(){
-		
-		//$ingredienteDBO->orderBy("id ASC");
-		$conexion = new mysql();
-		$conexion->conectar();
-		$consulta = "select * from ingrediente";
-		$datos = $conexion->query($consulta);
-
-
-		$ingredientes = array();
-		$contador = 0;
-
-		while($row = mysqli_fetch_array($datos)){
-			$ingredientes[$contador] = $row['id'];
-			$contador++;
-		}
-		return $ingredientes;
-	}
-	*/
 }
 ?>
